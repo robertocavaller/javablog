@@ -1,8 +1,11 @@
 package cz.jiripinkas.jba.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -11,6 +14,17 @@ public class Role {
 	@GeneratedValue
 	private Integer id;
 	private String name;
+	@ManyToMany
+	private List<User> users;
+
+	
+	
+	public List<User> getUsers() {
+		return users;
+	}
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
 	public Integer getId() {
 		return id;
 	}
